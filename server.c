@@ -53,10 +53,10 @@ int main(int argc, char **argv){
             continue;
         }
 
-        while((bytes_received = recv(clientfd, recBuffer, BUFFER_SIZE, 0)) > 0){
-            recBuffer[bytes_received] = '\0';
+        while((bytes_received = recv(clientfd, buffer, BUFFER_SIZE, 0)) > 0){
+            buffer[bytes_received] = '\0';
             printf("Received: %s\n", buffer);
-            send(clientfd, recBuffer, bytes_received, 0);
+            send(clientfd, buffer, bytes_received, 0);
         }
     }
 
