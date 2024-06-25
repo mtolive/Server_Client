@@ -14,14 +14,21 @@ def main():
         client_socket.connect((SERVER_IP, PORT))
         print(f"Connected to server at {SERVER_IP}:{PORT}")
 
-        # Send a message to the server
-        message = "Hello, Server!"
-        client_socket.sendall(message.encode())
-        print(f"Sent: {message}")
+        while True:
+            # Get user input
+            message = input("Enter message to send (type 'quit' to exit): ")
 
-        # Receive the server's response
-        response = client_socket.recv(BUFFER_SIZE).decode()
-        print(f"Received: {response}")
+            # Check if the user wants to quit
+            if message.lower() == 'quit':
+                break
+
+            # Send the message to the server
+            client_socket.sendall(message.encode())
+            print(f"Sent: {message}")
+
+            # Receive the server's response
+            response = client_socket.recv(BUFFER_SIZE).decode()
+            print(f"Received: {response}")
 
     except Exception as e:
         print(f"Error: {e}")
