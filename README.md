@@ -2,7 +2,14 @@ Running a Server Program on VxWorks 7 in QEMU (x86)
 This repository contains a simple server program designed to run on VxWorks 7 within the QEMU x86 emulator. The client script provided was tested on WSL but can be used in any local terminal environment.
 
 Getting Started
+
 VxWorks 7 SDK for QEMU (x86)
+
+official README:
+```
+https://d13321s3lxgewa.cloudfront.net/downloads/wrsdk-vxworks7-docs/2403/README_qemu.html
+```
+
 To set up the development environment, you'll need the VxWorks 7 Software Development Kit (SDK) for QEMU (x86).
 
 Installation Steps:
@@ -17,7 +24,9 @@ sudo pip install pyftpdlib
 Download and Setup VxWorks 7 SDK:
 
 You can download the SDK from Wind River's official forum or use the direct download link:
-
+```
+wget https://d13321s3lxgewa.cloudfront.net/wrsdk-vxworks7-qemu-1.14.tar.bz2
+```
 VxWorks 7 SDK for QEMU (x86) Version 1.14
 Extract the SDK and set up the development environment:
 
